@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Object;
 
 class CreateObjectsTable extends Migration
 {
@@ -18,6 +19,21 @@ class CreateObjectsTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        $objects = [
+            ['name' => 'Baralho'],
+            ['name' => 'Bola'],
+            ['name' => 'Caneta e Papel'],
+            ['name' => 'Dados'],
+            ['name' => 'Barbante'],
+            ['name' => 'Corda'],
+            ['name' => 'Venda'],
+            ['name' => 'Copo']
+        ];
+
+        foreach ($objects as $object) {
+            Object::create($object);
+        }
     }
 
     /**
