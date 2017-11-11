@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Game;
 use App\Question;
 use App\Category;
 use App\Object;
+use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
@@ -28,8 +30,8 @@ class QuestionController extends Controller
             ->first());
         }
         
-        $ageRange = ['Livre', 'Até 5', 'Até 10', 'Até 12', 'Até 14', 'Até 16', '18 ou mais'];
-        $numPlayers = ['2', '3', '4', '5', '6', '6+'];
+        $ageRange = ['Livre', 'Até 05', 'Até 10', 'Até 12', 'Até 14', 'Até 16', 'Mais de 18'];
+        $numPlayers = ['2', '3', '4', '5', '6', '+6'];
         $categories = Category::all()->pluck('name')->toArray();
         $objects = Object::all()->pluck('name')->toArray();
 
@@ -39,10 +41,47 @@ class QuestionController extends Controller
             ['description' => $randomQuestions[1]->description, 'possibilities' => $numPlayers],
             ['description' => $randomQuestions[3]->description, 'possibilities' => $categories],
             ['description' => $randomQuestions[4]->description, 'possibilities' => $objects],
-            ['description' => $randomQuestions[5]->description],
         ];
 
 
         return response()->json($questions);
+    }
+
+    /**
+     * Return the recommended games
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getGames(Request $request)
+    {
+        // 'fields' => [
+        //     ['minimum_age' => "5"],
+        //     ['minimum_number_players' => "2"],
+        //     ['categories' => ['Cartas', 'Sorte']],
+        //     ['objects' => ['Caneta e Papel', 'Baralho']],
+        // ]
+
+        $answers = $request->input();
+
+        if($answers['minimum_age'] == "Livre")
+            $answers['minimum_age'] = 0;
+        else
+            $answers['minimum_age'] = intval(substr($answers['minimum_age'], -2));
+
+        $answers['minimum_number_players'] = intval(substr($answers['minimum_number_players'], -1));
+
+        $games = DB::select(DB::raw("SELECT g.*
+            FROM games g
+                JOIN category_game cg on g.id = cg.game_id
+                JOIN categories c on cg.category_id = c.id
+                JOIN game_object og on g.id = og.game_id
+                JOIN objects o on og.object_id = o.id
+            WHERE g.minimum_age <= $answers[minimum_age]
+                AND g.minimum_number_players <= $answers[minimum_number_players]
+                AND c.name in ($answers[categories])
+                AND o.name in ($answers[objects])"));
+        
+        return response()->json($games);
+        
     }
 }
