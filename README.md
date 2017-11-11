@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Ferramenta para sugestão de entretenimento!
+Ferramenta para sugestão de entretenimento! Criada para participação no IV Code Race!
 
 A aplicação dispões do Gimmo, um assistente pessoal de entretenimento, cujo objetivo é ajudar você a descobrir um game ideal para jogar com a galera.
 
