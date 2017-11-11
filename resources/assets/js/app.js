@@ -13,6 +13,7 @@ import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
 
 import Stepper from './components/Stepper.vue'
+import ListGames from './components/ListGames.vue'
 
 Vue.use(Vuetify)
 Vue.use(VueRouter)
@@ -20,7 +21,8 @@ Vue.use(VueRouter)
 Vue.component('home', require('./components/home/Index.vue'));
 
 const routes = [
-  { title: 'Stteper 1' , icon: 'home', path: '/', component: Stepper}
+  { title: 'Stteper 1', path: '/', component: Stepper},
+  { title: 'Results', path: '/results', component: ListGames},
 ]
 
 const router = new VueRouter({
