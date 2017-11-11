@@ -9,14 +9,31 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+import Vuetify from 'vuetify'
+import VueRouter from 'vue-router'
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import Stepper from './components/Stepper.vue'
+
+Vue.use(Vuetify)
+Vue.use(VueRouter)
+
+Vue.component('home', require('./components/home/Index.vue'));
+
+const routes = [
+  { title: 'Stteper 1' , icon: 'home', path: '/', component: Stepper}
+]
+
+const router = new VueRouter({
+  routes: routes,
+  linkActiveClass: 'list__tile--active'
+})
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data () {
+        return {
+            routes: routes,
+        }
+    },
+    router,
 });

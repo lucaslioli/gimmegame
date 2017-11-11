@@ -18,8 +18,8 @@ class CreateGamesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->longText('rules');
-            $table->string('age_range');
-            $table->integer('player_number')->unsigned();
+            $table->integer('mininum_age')->unsigned();
+            $table->integer('minimum_number_players')->unsigned();
             $table->timestamps();
         });
     }
