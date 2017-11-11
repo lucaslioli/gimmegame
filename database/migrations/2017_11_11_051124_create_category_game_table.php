@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Game;
 
 class CreateCategoryGameTable extends Migration
 {
@@ -21,6 +22,13 @@ class CreateCategoryGameTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
+
+        Game::find(1)->categories()->attach([1,6]);
+        Game::find(2)->categories()->attach(6);
+        Game::find(3)->categories()->attach(9);
+        Game::find(4)->categories()->attach([6,9]);
+        Game::find(5)->categories()->attach([7,9,10]);
+        Game::find(6)->categories()->attach([9,10]);
     }
 
     /**

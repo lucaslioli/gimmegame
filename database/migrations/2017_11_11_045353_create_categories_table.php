@@ -29,7 +29,8 @@ class CreateCategoriesTable extends Migration
             ['name' => 'Adivinhação'],
             ['name' => 'Azar'],
             ['name' => 'Quiz'],
-            ['name' => 'Raciocínio']
+            ['name' => 'Raciocínio'],
+            ['name' => 'Cartas']
         ];
 
         foreach ($categories as $category) {

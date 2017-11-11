@@ -49488,6 +49488,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['title'],
@@ -49512,11 +49513,22 @@ var render = function() {
         "v-toolbar",
         { attrs: { dark: "", color: "white" } },
         [
-          _c("v-toolbar-title", { staticClass: "white--text" }, [
-            _vm._v(_vm._s(_vm.title))
-          ]),
+          _c(
+            "v-toolbar-title",
+            { attrs: { "justify-center": "", "fill-height": "" } },
+            [
+              _c("img", {
+                staticClass: "mt-2",
+                attrs: { src: "/img/GimmeGame_Typo01.png", width: "180px" }
+              })
+            ]
+          ),
           _vm._v(" "),
-          _c("v-spacer")
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c("img", {
+            attrs: { src: "/img/GimmeGame_Symbol01.png", width: "50px" }
+          })
         ],
         1
       ),
