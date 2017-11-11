@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/questions', 'QuestionController@getQuestions');
-Route::get('/games', 'QuestionController@getGames');
+Route::post('/games', 'QuestionController@getGames');

@@ -62,6 +62,7 @@ class QuestionController extends Controller
         // ]
 
         $answers = $request->input();
+        // dd($answers);
 
         if($answers['minimum_age'] == "Livre")
             $answers['minimum_age'] = 0;
@@ -69,6 +70,23 @@ class QuestionController extends Controller
             $answers['minimum_age'] = intval(substr($answers['minimum_age'], -2));
 
         $answers['minimum_number_players'] = intval(substr($answers['minimum_number_players'], -1));
+
+        $answers['categories'] = explode(',', $answers['categories']);
+        $answers['objects'] = explode(',', $answers['objects']);
+
+        $cat = "AND (";
+        foreach($answers['categories'] as $cate){
+            $cat .= "c.name = '".$cate."' OR ";
+        }
+        $cat .= "c.name = '')";
+
+        $obj = "AND (";
+        foreach($answers['objects'] as $obje){
+            $obj .= "o.name = '".$obje."' OR ";
+        }
+        $obj .= "o.name = '')";
+
+        // DB::connection()->enableQueryLog();
 
         $games = DB::select(DB::raw("SELECT g.*
             FROM games g
@@ -78,8 +96,9 @@ class QuestionController extends Controller
                 JOIN objects o on og.object_id = o.id
             WHERE g.minimum_age <= $answers[minimum_age]
                 AND g.minimum_number_players <= $answers[minimum_number_players]
-                AND c.name in ($answers[categories])
-                AND o.name in ($answers[objects])"));
+                $cat $obj"));
+
+        // dd(DB::getQueryLog());
         
         return response()->json($games);
         
