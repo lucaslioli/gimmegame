@@ -16,7 +16,7 @@ Através de perguntas pré-definidas o Gimmo elenca quais os jogos mais adequado
 
 ## Apresentação
 
-[Apresentação da Proposta](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/apresentacao-gimmegame-01.pdf)
+[Apresentação da Proposta](https://github.com/lucaslioli/gimmegame/blob/master/docs/apresentacao-gimmegame-01.pdf)
 
 ## Identidade
 
