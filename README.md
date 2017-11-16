@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Ferramenta para sugestão de entretenimento!
+Ferramenta para sugestão de entretenimento! Criada para participação no IV Code Race!
 
 A aplicação dispões do Gimmo, um assistente pessoal de entretenimento, cujo objetivo é ajudar você a descobrir um game ideal para jogar com a galera.
 
@@ -16,8 +16,8 @@ Através de perguntas pré-definidas o Gimmo elenca quais os jogos mais adequado
 
 ## Apresentação
 
-[Apresentação da Proposta](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/GimmeGame_Logo01.png)
+[Apresentação da Proposta](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/apresentacao-gimmegame-01.pdf)
 
 ## Identidade
 
-![logo](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/apresentacao-gimmegame-01.pdf)
+![logo](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/GimmeGame_Logo01.png)
