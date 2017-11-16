@@ -14,6 +14,10 @@ Através de perguntas pré-definidas o Gimmo elenca quais os jogos mais adequado
 
 [Vue.js 2.1.10](https://vuejs.org/v2/guide/) JavaScript Framework
 
+## Apresentação
+
+[Apresentação da Proposta](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/GimmeGame_Logo01.png)
+
 ## Identidade
 
-![logo](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/GimmeGame_Logo01.png)
+![logo](https://raw.githubusercontent.com/lucaslioli/code-race-iv/master/docs/apresentacao-gimmegame-01.pdf)
