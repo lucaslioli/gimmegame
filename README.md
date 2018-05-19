@@ -4,7 +4,7 @@
 
 Ferramenta para sugestão de entretenimento! Criada para participação no IV Code Race!
 
-A aplicação dispões do Gimmo, um assistente pessoal de entretenimento, cujo objetivo é ajudar você a descobrir um game ideal para jogar com a galera.
+A aplicação dispõe do Gimmo, um assistente pessoal de entretenimento, cujo objetivo é ajudar você a descobrir um game ideal para jogar com a galera.
 
 Através de perguntas pré-definidas o Gimmo elenca quais os jogos mais adequados para você e seus amigos ou fámilia jogarem nos momentos de lazer e diversão.
 
