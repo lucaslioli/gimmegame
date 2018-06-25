@@ -1,4 +1,4 @@
-# GimmeGame
+# GimmeGame - Web Version
 
 ## Descrição
 
